@@ -7,10 +7,14 @@ fixes, minor for new features, major for changes that break existing scripts.
 
 ### Changed
 - README: the example figures are grouped per script, each with a short
-  explanation (Gaussian peak, complex data, noise models, grid, Monte Carlo,
-  Lab C noise).
+  explanation (Gaussian peak, complex data, noise models, grid, Monte Carlo).
 - `example_noise_models.py`: the legend of each noisy figure names its noise
   form (σ = 0.2, σ: step, σ: bathtub), so each figure can be read on its own.
+
+### Removed
+- `example_lab_c_noise.py` and its figures: an instrument calibration does not
+  belong in a general fitting package. `example_noise_models.py` still shows
+  how to pass your own noise function (a bathtub) to `add_noise`.
 
 ## [0.1.0] - 2026-10-23
 

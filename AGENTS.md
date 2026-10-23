@@ -17,8 +17,8 @@ start values. It contains **no model functions and no physics**: the user
 writes the model (in a script, or a later materials package built on cjctmm)
 and passes it in. Model functions appear only in `examples/` and `tests/`, as
 illustrations. Do not add transfer matrices, material models, THz specifics
-or instrument calibrations to `src/` (the one calibration, Lab C 2026-06-15,
-lives in `examples/example_lab_c_noise.py` only).
+or instrument calibrations to `src/` or `examples/`: measured calibrations
+belong to the user's experiments, not to this general package.
 
 ## Commands
 

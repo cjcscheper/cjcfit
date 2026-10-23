@@ -157,8 +157,8 @@ sigma = noise_sigma(field_ratio, freq_hz, additive=0.01, multiplicative=1e-3 + 1
 Each term is a number, an array (one value per point) or a function of x
 (`additive=lambda freq_hz: ...`). For real data only the real parts exist.
 `noise_sigma` gives the standard deviation per point for the same settings,
-ready to pass to a fit as `sigma`. `examples/example_lab_c_noise.py` holds a
-measured instrument noise as a reference.
+ready to pass to a fit as `sigma`. `examples/example_noise_models.py` shows
+how to pass your own function, for example a measured noise curve.
 
 ## Monte Carlo
 
@@ -289,19 +289,6 @@ uncertainty each single fit reports.
 <p align="center">
   <img src="examples/example_monte_carlo_noise.png" alt="histogram of 5000 fitted peak positions" width="320">
 </p>
-
-### Lab C instrument noise
-
-A reference for scripts that need realistic noise: the measured noise of
-the Lab C THz-TDS setup (calibration of 2026-06-15) as cjcfit noise terms,
-on a synthetic field ratio.
-
-<table align="center">
-  <tr>
-    <td><img src="examples/example_lab_c_noise_amplitude.png" alt="field ratio magnitude with Lab C noise" width="320"></td>
-    <td><img src="examples/example_lab_c_noise_phase.png" alt="field ratio phase with Lab C noise" width="320"></td>
-  </tr>
-</table>
 
 ## Conventions
 

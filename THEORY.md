@@ -243,7 +243,7 @@ with independent standard normal numbers $`n_1 \dots n_4`$ per point.
 
 Each of $`a, b, s`$ may be a number, an array (one value per point, i.e.
 dispersive noise) or a function of x such as a "bathtub" in frequency
-(`examples/example_noise_models.py`, `example_lab_c_noise.py`). For real data
+(`examples/example_noise_models.py`). For real data
 only $`a`$ and $`s_\mathrm{re}`$ exist; an imaginary part is an error.
 
 `noise_sigma` gives the standard deviation of Re and Im to first order in
