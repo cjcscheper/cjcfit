@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cjcfit"
+# The version is read from src/cjcfit/__init__.py (__version__), its only source.
+dynamic = ["version"]
+description = "General least-squares fitting with parameter scaling, priors, complex data, noise models and Monte Carlo studies."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "C.J.C. Scheper" }]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "scipy",
+]
+
+[project.optional-dependencies]
+test = ["pytest"]
+# Only for cjcfit.app (the interactive start-point picker) and the scripts in examples/;
+# cjcplot is pinned to a release tag. The core never imports matplotlib or cjcplot.
+app = [
+    "matplotlib>=3.7",
+    "cjcplot @ git+https://github.com/cjcscheper/cjcplot.git@v0.2.0",
+]
+
+[tool.setuptools.dynamic]
+version = { attr = "cjcfit.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
