@@ -43,7 +43,9 @@ plot_1d(
     fig_show=False,
 )
 
-# One noisy realisation per form, each in its own figure, with its sigma as error bars.
+# One noisy realisation per form, each in its own figure, with its sigma as error bars; the legend names
+# the form, so each figure can be read on its own.
+data_labels = {"number": r"$\sigma$ = 0.2", "array": r"$\sigma$: step", "function": r"$\sigma$: bathtub"}
 for (name, term), sigma in zip(forms.items(), sigmas):
     noisy = add_noise(signal, x, additive=term, seed=5)
     plot_1d(
@@ -51,10 +53,10 @@ for (name, term), sigma in zip(forms.items(), sigmas):
         yerr_data=[sigma, None],
         colors=[BLUE, RED], err_colors=[BLUE],
         line_show=[False, True], scatter_show=[True, False], line_styles=["-", "-"],
-        legend_labels=["data", "true"],
+        legend_labels=[data_labels[name], "true"],
         xlabel="X axis [arb. u]", ylabel="Y axis [arb. u]",
         xlim=(0.0, 1.0), ylim=(-1.0, 1.0),
-        legend_loc="upper left",
+        legend_loc="lower right",
         fig_aspect_ratio=(0.5, 0.5),
         save_path=f"{output_stem}_{name}.png",
         fig_show=False,
