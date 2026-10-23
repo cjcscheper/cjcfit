@@ -5,6 +5,11 @@ fixes, minor for new features, major for changes that break existing scripts.
 
 ## [Unreleased]
 
+### Changed
+- README: the example figures are grouped per script, each with a short
+  explanation (Gaussian peak, complex data, noise models, grid, Monte Carlo,
+  Lab C noise).
+
 ## [0.1.0] - 2026-10-23
 
 First release.

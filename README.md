@@ -218,41 +218,90 @@ figures next to itself. They plot with
 [cjcplot](https://github.com/cjcscheper/cjcplot) and need the `app` extra,
 which pins cjcplot to a release tag (now `v0.2.0`).
 
-| Script                                | Shows                                                                   |
-|---------------------------------------|-------------------------------------------------------------------------|
-| `example_gaussian_peak.py`            | a non-linear fit from a start that is off in position and height        |
-| `example_complex_data.py`             | amplitude and delay of `A exp(-i 2 pi x tau)`, fitted in Re and Im       |
-| `example_noise_models.py`             | the three forms of a noise term: number, array, function of x           |
-| `example_lab_c_noise.py`              | the measured Lab C instrument noise (2026-06-15) as noise terms         |
-| `example_grid_fit.py`                 | R² map over two parameters, and the fit started from its best point     |
-| `example_monte_carlo.py`              | both studies on two-peak data: where single-peak fits from random starts end, and the spread of the peak position over 5000 noisy fits |
-
 <!-- widths = fig_aspect_ratio[0] x 640 px, so all fonts appear at the same size. -->
+
+### Gaussian peak — `example_gaussian_peak.py`
+
+A non-linear fit: the start (dotted grey) is lower and shifted to the left,
+and the fit (dashed yellow) walks from there onto the true peak (red).
+
+<p align="center">
+  <img src="examples/example_gaussian_peak.png" alt="Gaussian peak: data, fit, true curve and start curve" width="320">
+</p>
+
+### Complex data — `example_complex_data.py`
+
+Amplitude and delay of `Y = A exp(-i 2 pi x tau)`, fitted in Re and Im at
+once; shown as magnitude and phase.
+
 <table align="center">
-  <tr>
-    <td><img src="examples/example_gaussian_peak.png" alt="Gaussian peak: data, fit, true curve and start curve" width="320"></td>
-    <td><img src="examples/example_grid_fit_data.png" alt="sine: data, fit from the best grid point and true curve" width="320"></td>
-  </tr>
   <tr>
     <td><img src="examples/example_complex_data_amplitude.png" alt="magnitude of a complex fit" width="320"></td>
     <td><img src="examples/example_complex_data_phase.png" alt="phase of a complex fit" width="320"></td>
   </tr>
+</table>
+
+### Noise models — `example_noise_models.py`
+
+The three forms of a noise term: a number, an array (one sigma per point,
+here a step) and a function of x (a bathtub). Left the sigma of each, right
+a noisy curve with the bathtub, below the number and the array.
+
+<table align="center">
   <tr>
     <td><img src="examples/example_noise_models_sigma.png" alt="sigma of the three noise forms" width="320"></td>
     <td><img src="examples/example_noise_models_function.png" alt="noisy curve with a bathtub-shaped sigma" width="320"></td>
   </tr>
   <tr>
+    <td><img src="examples/example_noise_models_number.png" alt="noisy curve with a constant sigma" width="320"></td>
+    <td><img src="examples/example_noise_models_array.png" alt="noisy curve with a step in sigma" width="320"></td>
+  </tr>
+</table>
+
+### Starting values from a grid — `example_grid_fit.py`
+
+R² of a sine over its two parameters: one tilted ridge with its best point
+at (0.5, 0.5), nothing elsewhere. The least-squares fit started from the
+best grid point lands on the truth.
+
+<table align="center">
+  <tr>
+    <td><img src="examples/example_grid_fit_map.png" alt="R-squared map over two parameters" width="384"></td>
+    <td><img src="examples/example_grid_fit_data.png" alt="sine: data, fit from the best grid point and true curve" width="320"></td>
+  </tr>
+</table>
+
+### Monte Carlo — `example_monte_carlo.py`
+
+Both studies on the same two-peak data. The convergence study fits one
+Gaussian 200 times from random starts: dark grey starts end on the big
+peak (the global minimum), light grey ones on the small peak (a local
+minimum). The noise study fits both peaks to 5000 fresh noisy copies: the
+histogram is the real spread of the fitted peak position, which matches the
+uncertainty each single fit reports.
+
+<table align="center">
+  <tr>
     <td><img src="examples/example_monte_carlo_data.png" alt="two-peak data and true curve" width="320"></td>
     <td><img src="examples/example_monte_carlo_end_points.png" alt="start and end points of 200 fits" width="320"></td>
   </tr>
-  <tr>
-    <td><img src="examples/example_monte_carlo_noise.png" alt="histogram of 5000 fitted peak positions" width="320"></td>
-    <td><img src="examples/example_lab_c_noise_amplitude.png" alt="field ratio magnitude with Lab C noise" width="320"></td>
-  </tr>
 </table>
 <p align="center">
-  <img src="examples/example_grid_fit_map.png" alt="R-squared map over two parameters" width="384">
+  <img src="examples/example_monte_carlo_noise.png" alt="histogram of 5000 fitted peak positions" width="320">
 </p>
+
+### Lab C instrument noise — `example_lab_c_noise.py`
+
+A reference for scripts that need realistic noise: the measured noise of
+the Lab C THz-TDS setup (calibration of 2026-06-15) as cjcfit noise terms,
+on a synthetic field ratio.
+
+<table align="center">
+  <tr>
+    <td><img src="examples/example_lab_c_noise_amplitude.png" alt="field ratio magnitude with Lab C noise" width="320"></td>
+    <td><img src="examples/example_lab_c_noise_phase.png" alt="field ratio phase with Lab C noise" width="320"></td>
+  </tr>
+</table>
 
 ## Conventions
 
