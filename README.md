@@ -220,7 +220,7 @@ which pins cjcplot to a release tag (now `v0.2.0`).
 
 <!-- widths = fig_aspect_ratio[0] x 640 px, so all fonts appear at the same size. -->
 
-### Gaussian peak — `example_gaussian_peak.py`
+### Gaussian peak
 
 A non-linear fit: the start (dotted grey) is lower and shifted to the left,
 and the fit (dashed yellow) walks from there onto the true peak (red).
@@ -229,7 +229,7 @@ and the fit (dashed yellow) walks from there onto the true peak (red).
   <img src="examples/example_gaussian_peak.png" alt="Gaussian peak: data, fit, true curve and start curve" width="320">
 </p>
 
-### Complex data — `example_complex_data.py`
+### Complex data
 
 Amplitude and delay of `Y = A exp(-i 2 pi x tau)`, fitted in Re and Im at
 once; shown as magnitude and phase.
@@ -241,7 +241,7 @@ once; shown as magnitude and phase.
   </tr>
 </table>
 
-### Noise models — `example_noise_models.py`
+### Noise models
 
 The three forms of a noise term: a number, an array (one sigma per point,
 here a step) and a function of x (a bathtub). Left the sigma of each, right
@@ -258,7 +258,7 @@ a noisy curve with the bathtub, below the number and the array.
   </tr>
 </table>
 
-### Starting values from a grid — `example_grid_fit.py`
+### Starting values from a grid
 
 R² of a sine over its two parameters: one tilted ridge with its best point
 at (0.5, 0.5), nothing elsewhere. The least-squares fit started from the
@@ -271,7 +271,7 @@ best grid point lands on the truth.
   </tr>
 </table>
 
-### Monte Carlo — `example_monte_carlo.py`
+### Monte Carlo
 
 Both studies on the same two-peak data. The convergence study fits one
 Gaussian 200 times from random starts: dark grey starts end on the big
@@ -290,7 +290,7 @@ uncertainty each single fit reports.
   <img src="examples/example_monte_carlo_noise.png" alt="histogram of 5000 fitted peak positions" width="320">
 </p>
 
-### Lab C instrument noise — `example_lab_c_noise.py`
+### Lab C instrument noise
 
 A reference for scripts that need realistic noise: the measured noise of
 the Lab C THz-TDS setup (calibration of 2026-06-15) as cjcfit noise terms,
